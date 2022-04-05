@@ -1,0 +1,76 @@
+<input
+  type="text"
+  [(ngModel)]="name"
+  #ctrl="ngModel"
+  (ngModelChange)="modelChangeFn(ctrl.value)"
+/>
+
+<ul>
+  <li *ngFor="let user of xxx">
+    {{ user.name }}
+  </li>
+</ul>
+<p style="color: red">{{ error }}</p>
+
+<div class="tim-cal">
+  <div>
+    <h2>CLOCK</h2>
+    <div id="clock">{{ time | date: "hh:mm:ss a" }}</div>
+  </div>
+
+  <div>
+    <h2>Calculator</h2>
+    <!-- <input type="text" [(ngModel)]="!num1 ? ans : num1" />
+<button (click)="getNo(1)">1</button>
+<button (click)="getNo(2)">2</button>
+<button (click)="getNo(3)">3</button>
+<button (click)="getNo(4)">4</button>
+<button (click)="getNo(5)">5</button>
+<button (click)="getNo(6)">6</button>
+<button (click)="getNo(7)">7</button>
+<button (click)="getNo(8)">8</button>
+<button (click)="getNo(9)">9</button>
+<button (click)="getNo(0)">0</button>
+
+<button (click)="getResult()">=</button>
+<button (click)="getSign('-')">-</button>
+<button (click)="getSign('/')">/</button>
+<button (click)="getSign('+')">+</button>
+<button (click)="getSign('x')">x</button> -->
+
+    <div class="calculator">
+      <input type="text" class="calculator-screen" [value]="num1" disabled />
+
+      <div class="calculator-keys">
+        <button type="button" class="operator" (click)="getSign('+')">+</button>
+        <button type="button" class="operator" (click)="getSign('-')">-</button>
+        <button type="button" class="operator" (click)="getSign('*')">
+          &times;
+        </button>
+        <button type="button" class="operator" (click)="getSign('/')">
+          &divide;
+        </button>
+
+        <button type="button" (click)="getNo('7')">7</button>
+        <button type="button" (click)="getNo('8')">8</button>
+        <button type="button" (click)="getNo('9')">9</button>
+
+        <button type="button" (click)="getNo('4')">4</button>
+        <button type="button" (click)="getNo('5')">5</button>
+        <button type="button" (click)="getNo('6')">6</button>
+
+        <button type="button" (click)="getNo('1')">1</button>
+        <button type="button" (click)="getNo('2')">2</button>
+        <button type="button" (click)="getNo('3')">3</button>
+
+        <button type="button" (click)="getNo('0')">0</button>
+        <button type="button" class="decimal" (click)="getNo('.')">.</button>
+        <button type="button" class="all-clear" (click)="allClear()">AC</button>
+
+        <button type="button" class="equal-sign" (click)="getResult()">
+          =
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
